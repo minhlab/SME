@@ -1,0 +1,21 @@
+#!/bin/bash
+#$ -l h_rt=24:00:00
+#$ -V
+#$ -l gpu=GTX480
+#$ -o WN2.out
+#$ -e WN2.out
+#$ -cwd
+
+#python WN/WN_parse.py
+
+echo "**********************************************"
+echo "SEM bilinear"
+echo "**********************************************"
+echo
+python WN/WN_SME_bil.py
+
+echo "**********************************************"
+echo "SEM linear"
+echo "**********************************************"
+echo
+python WN/WN_SME_lin.py

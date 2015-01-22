@@ -1,0 +1,27 @@
+#!/bin/bash
+#$ -l h_rt=24:00:00
+#$ -V
+#$ -l gpu=GTX480
+#$ -o WN.out
+#$ -e WN.out
+#$ -cwd
+
+#python WN/WN_parse.py
+
+echo "**********************************************"
+echo "TransE"
+echo "**********************************************"
+echo
+python WN/WN_TransE.py
+
+echo "**********************************************"
+echo "SE"
+echo "**********************************************"
+echo
+python WN/WN_SE.py
+
+echo "**********************************************"
+echo "Unstructured"
+echo "**********************************************"
+echo
+python WN/WN_Unstructured.py
